@@ -1,6 +1,5 @@
-import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
-// Import the Scanner class to read text files
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*; 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
