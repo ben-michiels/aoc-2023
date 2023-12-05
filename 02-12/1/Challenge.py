@@ -6,7 +6,7 @@ blueRegex = "(\d+) blue"
 
 lines = open('../input.txt').read().splitlines()
 
-count = 0;
+count = 0
 
 for index, line in enumerate(lines):
   redMatches = re.findall(redRegex, line, re.MULTILINE)
