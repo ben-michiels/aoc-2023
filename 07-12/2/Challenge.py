@@ -1,5 +1,3 @@
-import re
-
 lines = open('../input.txt').read().splitlines()
 
 cardRankings = {
@@ -24,10 +22,10 @@ class Round:
   def __init__(self, hand, bid):
     self.hand = hand
     self.bid = bid
-    self.handRank = 0
+    self.matchingCards = []
     self.cardRanks = []
 
-def getHandRank(r):
+def getMatchingCards(r):
   cardDict = {}
 
   for card in r.hand:
@@ -57,12 +55,12 @@ for line in lines:
   for card in r.hand:
     r.cardRanks.append(cardRankings[card])
 
-  r.handRank = getHandRank(r)
+  r.matchingCards = getMatchingCards(r)
   
   rounds.append(r)
 
 rounds = sorted(rounds, key=lambda self: self.cardRanks)
-rounds = sorted(rounds, key=lambda self: self.handRank)
+rounds = sorted(rounds, key=lambda self: self.matchingCards)
 
 totalWinnings = 0
 for rIdx, r in enumerate(rounds):
